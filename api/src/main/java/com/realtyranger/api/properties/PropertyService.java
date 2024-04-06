@@ -24,6 +24,7 @@ public class PropertyService implements PropertyServiceInterface {
         Property currentProperty = propertyRepository.findById(id).orElseThrow(() -> new IllegalStateException("Property not found"));
         currentProperty.setTitle(property.getTitle());
         currentProperty.setDescription(property.getDescription());
+        currentProperty.setPrice(property.getPrice());
         currentProperty.setAddress(property.getAddress());
         currentProperty.setVisible(property.getVisible());
         currentProperty.setFacilities(property.getFacilities());

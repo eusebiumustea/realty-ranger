@@ -1,5 +1,6 @@
 package com.realtyranger.api.properties;
 import jakarta.persistence.*;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 
 @Entity
 @Table(name = "properties")
@@ -8,17 +9,27 @@ public class Property {
     @SequenceGenerator(allocationSize = 1, name = "property-id")
     @GeneratedValue(generator = "property-id", strategy = GenerationType.SEQUENCE)
     private long id;
+    @Column(length = 5000)
     private String title;
+    @Column(length = 50000)
     private String description;
-    private String[] facilities;
-    private String[] images;
-    private String address;
-    private Boolean visible;
 
-    public Property(long id, String title, String description, String[] facilities, String[] images, String address, Boolean visible) {
+    private Long price;
+    private String[] facilities;
+
+    private String[] images;
+    @Column(length = 500)
+    private String address;
+    private Boolean visible = true;
+
+    public Property() {
+    }
+
+    public Property(long id, String title, String description, Long price, String[] facilities, String[] images, String address, Boolean visible) {
         this.id = id;
         this.title = title;
         this.description = description;
+        this.price = price;
         this.facilities = facilities;
         this.images = images;
         this.address = address;
@@ -47,6 +58,14 @@ public class Property {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Long getPrice() {
+        return price;
+    }
+
+    public void setPrice(Long price) {
+        this.price = price;
     }
 
     public String[] getFacilities() {

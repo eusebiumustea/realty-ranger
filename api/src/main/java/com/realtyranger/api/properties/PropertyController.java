@@ -1,8 +1,6 @@
 package com.realtyranger.api.properties;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,5 +15,21 @@ public class PropertyController {
     @GetMapping
     public List<Property> getProperties() {
         return propertyService.getProperties();
+    }
+    @GetMapping(path = "{id}")
+    public Property getProperty(@PathVariable Long id) {
+        return  propertyService.getProperty(id);
+    }
+    @PutMapping(path = "{id}")
+    public void updateProperty(@PathVariable Long id, @RequestBody Property property) {
+        propertyService.updateProperty(id, property);
+    }
+    @PostMapping()
+    public void addProperty(@RequestBody Property property) {
+        propertyService.addProperty(property);
+    }
+    @DeleteMapping(path = "{id}")
+    public void removeProperty(@PathVariable Long id) {
+        propertyService.removeProperty(id);
     }
 }
