@@ -1,4 +1,4 @@
-package com.realtyranger.api.properties;
+package com.realtyranger.api.property;
 
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,5 @@
-package com.realtyranger.api.properties;
+package com.realtyranger.api.property;
 import jakarta.persistence.*;
-import org.springframework.boot.context.properties.bind.DefaultValue;
 
 @Entity
 @Table(name = "properties")
