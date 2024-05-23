@@ -1,14 +1,22 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, ReactNode } from "react";
 
-interface ButtonProps {
+interface PrimaryButtonProps {
   onClick?: () => void;
   theme?: "light" | "dark";
+  additionalStyle?: string;
 }
-export function Button({
+interface SecoundaryButtonProps {
+  onClick?: () => void;
+  icon?: ReactNode;
+  text: string;
+  additionalStyle?: string;
+}
+export function PrimaryButton({
   children,
   onClick,
   theme = "dark",
-}: PropsWithChildren<ButtonProps>) {
+  additionalStyle,
+}: PropsWithChildren<PrimaryButtonProps>) {
   return (
     <button
       className={`px-5 py-4 border ${
@@ -19,10 +27,29 @@ export function Button({
         theme === "light" ? "hover:text-[#0C4653]" : "hover:text-white"
       } ${
         theme === "light" ? "hover:bg-white" : "hover:bg-[#0C4653]"
-      } transition-all rounded-sm`}
+      } transition-all rounded-sm select-none shadow-lg ${additionalStyle}`}
       onClick={onClick}
     >
       {children}
+    </button>
+  );
+}
+export function SecoundaryButton({
+  icon,
+  text,
+  onClick,
+  additionalStyle,
+}: SecoundaryButtonProps) {
+  return (
+    <button
+      className={
+        "flex flex-row items-center justify-center py-3 px-7 bg-[#FF970F] gap-4 rounded-sm select-none hover:bg-[#ff970fd8] transition-all" +
+        additionalStyle
+      }
+      onClick={onClick}
+    >
+      {icon}
+      <h1 className="font-inter text-white text-sm font-medium">{text}</h1>
     </button>
   );
 }
