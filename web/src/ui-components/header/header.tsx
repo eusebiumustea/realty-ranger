@@ -15,7 +15,10 @@ export function Header() {
         className="w-full h-screen object-cover absolute -z-20 select-none"
         src="https://www.ro.kayak.com/rimg/dimg/81/ee/e112fbd1-city-27633-1656c96ae00.jpg?width=1366&height=768&xhint=1395&yhint=650&crop=true"
       />
-      <div className="w-full h-screen absolute -z-10 bg-black opacity-[0.35] select-none" />
+      <div
+        id="home"
+        className="w-full h-screen absolute -z-10 bg-black opacity-[0.35] select-none"
+      />
       <div className="flex flex-col items-center w-full h-screen gap-5 md:gap-20 justify-center p-4">
         <div className="flex flex-row justify-between w-full p-2 sm:p-6 absolute top-0">
           <Logo className="cursor-pointer" />

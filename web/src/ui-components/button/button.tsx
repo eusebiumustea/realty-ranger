@@ -11,6 +11,7 @@ interface SecoundaryButtonProps {
   text: string;
   additionalStyle?: string;
 }
+
 export function PrimaryButton({
   children,
   onClick,

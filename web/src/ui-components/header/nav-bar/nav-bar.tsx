@@ -5,12 +5,13 @@ export function NavBar() {
     <div className="hidden flex-row gap-6 items-center sm:flex">
       {menuItems.map((item, i) => {
         return (
-          <button
+          <a
+            href={`#${item}`}
             className="select-none uppercase font-inter cursor-pointer px-3 py-1 border-[#fff] text-white rounded-xl text-xs hover:bg-white hover:text-black transition-all"
             key={i}
           >
             {item}
-          </button>
+          </a>
         );
       })}
     </div>

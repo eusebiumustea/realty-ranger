@@ -29,10 +29,10 @@ export function MobileNav({ opened, onClose }: MobileNavProps) {
           <div className="flex flex-col gap-6 items-center">
             {menuItems.map((item, i) => {
               return (
-                <motion.button
+                <motion.a
+                  href={`#${item}`}
                   whileHover={{ scale: 1.1 }}
                   onClick={() => {
-                    // onSelected(item);
                     onClose();
                   }}
                   initial={{ opacity: 0, translateX: 150 }}
@@ -41,7 +41,7 @@ export function MobileNav({ opened, onClose }: MobileNavProps) {
                   className="text-4xl uppercase text-gray-800 font-ptsans p-4 hover:rounded-lg hover:bg-slate-950 hover:text-slate-50 select-none"
                 >
                   {item}
-                </motion.button>
+                </motion.a>
               );
             })}
           </div>

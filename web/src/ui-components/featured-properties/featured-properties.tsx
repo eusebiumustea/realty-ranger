@@ -3,7 +3,7 @@ import { PrimaryButton } from "../button";
 
 export function FeaturedProperties() {
   return (
-    <div className="w-full flex flex-col items-center">
+    <div id="properties" className="w-full flex flex-col items-center">
       <h1 className="text-[#0C4653] font-inter text-4xl font-normal uppercase text-center py-11">
         featured properties
       </h1>
