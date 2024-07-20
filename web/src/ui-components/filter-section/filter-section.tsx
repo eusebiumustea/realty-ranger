@@ -1,6 +1,6 @@
-import { SearchIcon, SettingsIcon } from "../../assets";
-import { SecoundaryButton } from "../../button";
-import { Input } from "../../input";
+import { SearchIcon, SettingsIcon } from "../assets";
+import { SecoundaryButton } from "../button";
+import { Input } from "../input";
 
 export function FilterSection() {
   return (

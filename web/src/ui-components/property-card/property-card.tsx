@@ -5,13 +5,14 @@ import {
   PropertySizeIcon,
   SquartMetersIcon,
 } from "../assets";
-interface PropertyCardProps {
+export interface PropertyCardProps {
   image: string;
   location: string;
   title: string;
   description: string;
   price: string;
   dealType: "rent" | "sale";
+  onClick?: () => void;
   propertyDimensions: {
     size: number;
     bedrooms: number;
@@ -25,9 +26,13 @@ export function PropertyCard({
   description,
   price,
   propertyDimensions: { size, bathrooms, bedrooms },
+  onClick,
 }: PropertyCardProps) {
   return (
-    <div className="max-w-[450px] px-3 sm:px-0 flex flex-col gap-2">
+    <div
+      onClick={onClick}
+      className="max-w-[450px] flex flex-col gap-2 cursor-pointer select-none hover:shadow-lg hover:rounded-lg p-4 transition-all"
+    >
       <img src={image} className="w-full max-h-[280px] rounded object-cover" />
       <div className="flex flex-row items-center gap-1">
         <LocationIcon />

@@ -20,7 +20,7 @@ export function PrimaryButton({
 }: PropsWithChildren<PrimaryButtonProps>) {
   return (
     <button
-      className={`px-5 py-4 border ${
+      className={`px-5 py-3 border ${
         theme === "light" ? "border-white" : "border-[#0C4653]"
       } ${
         theme === "light" ? "text-white" : "text-[#0C4653]"
@@ -29,6 +29,20 @@ export function PrimaryButton({
       } ${
         theme === "light" ? "hover:bg-white" : "hover:bg-[#0C4653]"
       } transition-all rounded-sm select-none shadow-lg ${additionalStyle}`}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+}
+export function FilledButton({
+  children,
+  onClick,
+  additionalStyle,
+}: PropsWithChildren<PrimaryButtonProps>) {
+  return (
+    <button
+      className={`px-5 py-2 font-inter uppercase text-sm font-medium border bg-[#0C4653] text-[#fff] transition-all rounded-sm select-none hover:shadow-2xl ${additionalStyle}`}
       onClick={onClick}
     >
       {children}

@@ -8,3 +8,5 @@ export * from "./bathroom-icon";
 export * from "./bedroom-icon";
 export * from "./property-size-icon";
 export * from "./squart-meters-icon";
+export * from "./arrow";
+export * from "./line";

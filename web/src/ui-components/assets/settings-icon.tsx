@@ -8,9 +8,9 @@ export function SettingsIcon(svg: any) {
       xmlns="http://www.w3.org/2000/svg"
       {...svg}
     >
-      <g clip-path="url(#clip0_41_33)">
-        <path d="M0.679688 3.25H18.1797" stroke="white" stroke-width="1.5" />
-        <path d="M0.679688 10.75H18.1797" stroke="white" stroke-width="1.5" />
+      <g clipPath="url(#clip0_41_33)">
+        <path d="M0.679688 3.25H18.1797" stroke="white" strokeWidth="1.5" />
+        <path d="M0.679688 10.75H18.1797" stroke="white" strokeWidth="1.5" />
         <path
           d="M6.67969 5.75C8.0604 5.75 9.17969 4.63071 9.17969 3.25C9.17969 1.86929 8.0604 0.75 6.67969 0.75C5.29898 0.75 4.17969 1.86929 4.17969 3.25C4.17969 4.63071 5.29898 5.75 6.67969 5.75Z"
           fill="white"
