@@ -8,31 +8,43 @@ public class Property {
     @SequenceGenerator(allocationSize = 1, name = "property-id")
     @GeneratedValue(generator = "property-id", strategy = GenerationType.SEQUENCE)
     private long id;
-    @Column(length = 5000)
+    @Column(length = 3000)
     private String title;
-    @Column(length = 50000)
+    @Column(length = 30000)
     private String description;
-
-    private Long price;
-    private String[] facilities;
-
+    private AgentProfile agentProfile;
+    @Column(length = 50)
+    private String propertyType;
+    @Column(length = 20)
+    private String dealType;
+    private Double reviewScore = 0.0;
+    private PropertyReview[] reviews;
+    private String price;
+    private PropertyEssentials essentials;
+    private Feature[] features;
     private String[] images;
+    @Column(length = 100)
+    private String location;
     @Column(length = 500)
     private String address;
-    private Boolean visible = true;
+    private Boolean active = true;
 
-    public Property() {
-    }
-
-    public Property(long id, String title, String description, Long price, String[] facilities, String[] images, String address, Boolean visible) {
+    public Property(long id, String title, String description, AgentProfile agentProfile, String propertyType, String dealType, Double reviewScore, PropertyReview[] reviews, String price, PropertyEssentials essentials, Feature[] features, String[] images, String location, String address, Boolean active) {
         this.id = id;
         this.title = title;
         this.description = description;
+        this.agentProfile = agentProfile;
+        this.propertyType = propertyType;
+        this.dealType = dealType;
+        this.reviewScore = reviewScore;
+        this.reviews = reviews;
         this.price = price;
-        this.facilities = facilities;
+        this.essentials = essentials;
+        this.features = features;
         this.images = images;
+        this.location = location;
         this.address = address;
-        this.visible = visible;
+        this.active = active;
     }
 
     public long getId() {
@@ -59,20 +71,68 @@ public class Property {
         this.description = description;
     }
 
-    public Long getPrice() {
+    public AgentProfile getAgentProfile() {
+        return agentProfile;
+    }
+
+    public void setAgentProfile(AgentProfile agentProfile) {
+        this.agentProfile = agentProfile;
+    }
+
+    public String getPropertyType() {
+        return propertyType;
+    }
+
+    public void setPropertyType(String propertyType) {
+        this.propertyType = propertyType;
+    }
+
+    public String getDealType() {
+        return dealType;
+    }
+
+    public void setDealType(String dealType) {
+        this.dealType = dealType;
+    }
+
+    public Double getReviewScore() {
+        return reviewScore;
+    }
+
+    public void setReviewScore(Double reviewScore) {
+        this.reviewScore = reviewScore;
+    }
+
+    public PropertyReview[] getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(PropertyReview[] reviews) {
+        this.reviews = reviews;
+    }
+
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(Long price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
-    public String[] getFacilities() {
-        return facilities;
+    public PropertyEssentials getEssentials() {
+        return essentials;
     }
 
-    public void setFacilities(String[] facilities) {
-        this.facilities = facilities;
+    public void setEssentials(PropertyEssentials essentials) {
+        this.essentials = essentials;
+    }
+
+    public Feature[] getFeatures() {
+        return features;
+    }
+
+    public void setFeatures(Feature[] features) {
+        this.features = features;
     }
 
     public String[] getImages() {
@@ -83,6 +143,14 @@ public class Property {
         this.images = images;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
     public String getAddress() {
         return address;
     }
@@ -91,11 +159,11 @@ public class Property {
         this.address = address;
     }
 
-    public Boolean getVisible() {
-        return visible;
+    public Boolean getActive() {
+        return active;
     }
 
-    public void setVisible(Boolean visible) {
-        this.visible = visible;
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 }
