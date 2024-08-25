@@ -5,6 +5,7 @@
   "workspaces": [
     "web",
     "mobile",
+    "api",
     "common/*"
   ]
 }
